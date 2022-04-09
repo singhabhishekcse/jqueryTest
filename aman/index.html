@@ -4,40 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passwoed validation</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Change color</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        #pass{
-            margin: 1%;
+        #btn1{
+            margin: 2%;
         }
-        #cnfpass{
-            margin: 1%;
-        }
-    </style>
+    </style>   
 </head>
 <body>
     <center>
-    <div id="pass">
-<input type="password" id="txtNewPassword" placeholder="Enter password" name="pass">
-</div>
-<div id="cnfpass">
-<input type="password" id="txtConfirmPassword" placeholder="Confirm Password" name="confpass" >
-</div>
-<div><button>Submit</button></div>
-	<div class="registrationFormAlert" style="color:#f50808;" id="CheckPasswordMatch">
-    <script>
-    function checkPasswordMatch() {
-        var password = $("#txtNewPassword").val();
-        var confirmPassword = $("#txtConfirmPassword").val();
-        if (password != confirmPassword)
-            $("#CheckPasswordMatch").html("Password did not match!");
-        else
-            $("#CheckPasswordMatch").html("Password matched.");
-    }
-    $(document).ready(function () {
-       $("#txtConfirmPassword").keyup(checkPasswordMatch);
-    });
-    </script>
+        <table id="table1" border="1">  
+            <tr>  
+                <td>C#</td>  
+                <td>ASP.NET</td>  
+                <td>SQL Server</td>  
+            </tr>  
+            <tr>  
+                <td>.NET</td>  
+                <td>jQuery</td>  
+                <td>JavaS</td>  
+            </tr>  
+            <tr>  
+                <td>AJAX</td>  
+                <td>CSS</td>  
+                <td>HTML</td>  
+            </tr>  
+            <tr>  
+                <td>VB</td>  
+                <td>Dot NET</td>  
+                <td>Visual</td>  
+            </tr>  
+            <tr>  
+                <td>Oracle</td>  
+                <td>Java</td>  
+                <td>J2EE</td>  
+            </tr>  
+        </table>  
+        <div><button id="btn1">Color Even Rows</button></div>
+        <div ><button id="btn2"> Color Odd Rows</button></div>
+
+        <script type="text/javascript">  
+            $(document).ready(function() {  
+                $("#btn1").click(function(){
+                    $("table tr:odd").css("background-color", "DodgerBlue");  
+                })
+                $("#btn2").click(function(){
+                    $("table tr:even").css("background-color","LightGrey");  
+            })
+        }); 
+        </script>  
     </center>
 </body>
 </html>
