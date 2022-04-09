@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Passwoed validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #pass{
+            margin: 1%;
+        }
+        #cnfpass{
+            margin: 1%;
+        }
+    </style>
 </head>
 <body>
-    
-   hello'
-
-
-
-    <script src="./script.js"></script>
+    <center>
+    <div id="pass">
+<input type="password" id="txtNewPassword" placeholder="Enter password" name="pass">
+</div>
+<div id="cnfpass">
+<input type="password" id="txtConfirmPassword" placeholder="Confirm Password" name="confpass" >
+</div>
+<div><button>Submit</button></div>
+	<div class="registrationFormAlert" style="color:#f50808;" id="CheckPasswordMatch">
+    <script>
+    function checkPasswordMatch() {
+        var password = $("#txtNewPassword").val();
+        var confirmPassword = $("#txtConfirmPassword").val();
+        if (password != confirmPassword)
+            $("#CheckPasswordMatch").html("Password did not match!");
+        else
+            $("#CheckPasswordMatch").html("Password matched.");
+    }
+    $(document).ready(function () {
+       $("#txtConfirmPassword").keyup(checkPasswordMatch);
+    });
+    </script>
+    </center>
 </body>
 </html>
