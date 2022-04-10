@@ -4,24 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click on para</title>
+    <title>List of products</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <style>
-        #para{
-            width: 60%;
-        }
-    </style>
 </head>
 <body>
-    <div>
-    <p id="para">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, placeat saepe. Provident ut, rem odit molestias dolores, a voluptate praesentium perferendis eaque doloremque modi omnis dolorum? Deserunt, incidunt. Dicta, quo.
-    </p>
-</div>
-<script>
-    $("#para").click (function(){
-        alert("Clicked Me")
-    })
-</script>
+    <div class="products">
+        <h1>Products</h1>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Size/Color</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>Duffle Bag</td>
+            <td>
+              <select id="slist" >
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </td>
+            <td id="price">1000/-</td>
+          </tr>
+          <tr>
+            <td>T-Shirts</td>
+            <td>
+              <select id="clist" >
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+              </select>
+            </td>
+            <td id="cprice">1200/-</td>
+          </tr>
+        </table>
+      </div>
+      <script>
+           $("#slist").change(function(){
+      var val = $("#slist").val(); 
+      $("#price").empty();
+      if(val=="medium"){
+        $("#price").append("2000/-");
+      }
+      else if(val=="large"){
+        $("#price").append("3000/-");
+      }
+      else {
+        $("#price").append("1000/-");
+      }
+    });
+
+    $("#clist").change(function(){
+      var val = $("#clist").val(); 
+      $("#cprice").empty();
+      if(val=="yellow"){
+        $("#cprice").append("3500/-");
+      }else {
+        $("#cprice").append("1200/-");
+      }
+    }); 
+      </script>
 </body>
 </html>
