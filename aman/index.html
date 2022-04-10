@@ -4,41 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empty Input color</title>
+    <title>Students Details</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <style>
-        div{   
-            margin: 2%;
-        }
-        .invalid{
-            background-color: red;
-        }
-    </style>
 </head>
 <body>
-    <center>
-        <!-- <form onsubmit="return myfun()"> -->
-    <div>Firstname: <br><input type="text" id="fname"></div>
-    <div>Lastname: <br><input type="text" id="lname"></div>
-    <div><button>Submit</button></div>
-     </center>
-    <!-- </form> -->
-     <script>
-     $(document).ready(function(){
-         $("button").click (function(){
-            $("input").each(function(){
-              if($(this).val() == ''){
-                 $(this).addClass('invalid')
-                  alert("Please fill all the inputs!");
-                }
+        <div class="edu_details">
+            <input type="text" placeholder=" Enter class" id="cls" />
+            <input type="text" placeholder=" Enter board" id="board" />
+            <input type="text" placeholder=" Enter marks" id="marks" />
+            <input type="text" placeholder=" Enter division" id="division" />
+            <button id="btn1">+</button>
+            <button id="btn2">-</button>
+        </div>
+        <div id="edu_details2"></div>
 
-              else{  
-                $(this).removeClass("invalid")}
-          })
-        })
-     })
-        
-        
+    </div>
+    <script>
+     $(document).ready(function () {
+        $("#btn1").click(() => {
+        var new_detail = `<div class="edu_details"><input type="text" placeholder=" Enter class"  />
+      <input type="text" placeholder=" Enter board"  />
+      <input type="text" placeholder=" Enter marks" >
+      <input type="text" placeholder=" Enter division" /></div>`;
+      $("#edu_details2").append(new_detail);
+      });
+      $("#btn2").click(() => {
+        var x = $("#edu_details2").children();
+        x.last().remove();
+      })
+    });
     </script>
 </body>
 </html>
