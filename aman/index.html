@@ -4,48 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting color automatically</title>
+    <title>Click on para</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        #para{
+            width: 60%;
+        }
+    </style>
 </head>
 <body>
-    <div class="test">
-        <p>Car Details</p>
-        <p>
-          In real life, a car is an object. A car has properties like weight and
-          color, and methods like start and stop. All cars have the same
-          properties, but the property values differ from car to car.
-        </p>
-        <p>
-          All cars have the same methods, but the methods are performed at
-          different times.
-        </p>
-      </div>
-      <div class="demo">
-        <p>Food Details</p>
-        <p>The seven food categories are</p>
-        <p>
-          Vegetables, Fruits, Grains, legumes, nuts and seeds, Meat and poultry,
-          Fish and seafood, Dairy foods, Eggs
-        </p>
-        <p>
-          Food sources from animals, birds, seafood and some plants provide
-          protein that is the building blocks of cells
-        </p>
-      </div>
-      <div class="test">
-        <p>Mobile Details</p>
-        <p>
-          There are three categories of mobile phones: basic phones, feature
-          phones, and smartphones.
-        </p>
-        <p>Smartphones are equipped with a QWERTY keypad.</p>
-      </div>
-      <script>
-          setTimeout(function(){ 
-       $(".test").children().first().css({"color":"orange"});
-       $(".test").children().last().css({"color":"blue"});
-     },5000);
-
-      </script>
+    <div>
+    <p id="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, placeat saepe. Provident ut, rem odit molestias dolores, a voluptate praesentium perferendis eaque doloremque modi omnis dolorum? Deserunt, incidunt. Dicta, quo.
+    </p>
+</div>
+<script>
+    $("#para").click (function(){
+        alert("Clicked Me")
+    })
+</script>
 </body>
 </html>
