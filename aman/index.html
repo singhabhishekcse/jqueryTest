@@ -4,65 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of products</title>
+    <title>Jquery Filters and selectors</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="products">
-        <h1>Products</h1>
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>Size/Color</th>
-            <th>Price</th>
-          </tr>
-          <tr>
-            <td>Duffle Bag</td>
-            <td>
-              <select id="slist" >
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-              </select>
-            </td>
-            <td id="price">1000/-</td>
-          </tr>
-          <tr>
-            <td>T-Shirts</td>
-            <td>
-              <select id="clist" >
-                <option value="orange">Orange</option>
-                <option value="yellow">Yellow</option>
-              </select>
-            </td>
-            <td id="cprice">1200/-</td>
-          </tr>
-        </table>
-      </div>
-      <script>
-           $("#slist").change(function(){
-      var val = $("#slist").val(); 
-      $("#price").empty();
-      if(val=="medium"){
-        $("#price").append("2000/-");
-      }
-      else if(val=="large"){
-        $("#price").append("3000/-");
-      }
-      else {
-        $("#price").append("1000/-");
-      }
-    });
 
-    $("#clist").change(function(){
-      var val = $("#clist").val(); 
-      $("#cprice").empty();
-      if(val=="yellow"){
-        $("#cprice").append("3500/-");
-      }else {
-        $("#cprice").append("1200/-");
-      }
-    }); 
-      </script>
+        <select class="OS">
+          <option value="all">-OS-</option>
+          <option >iOS</option>
+          <option >Android</option>
+          <option >Windows</option>
+        </select>
+
+        <select class="Brand" >
+          <option value="all">-Brand-</option>
+          <option>Apple</option>
+          <option>Motorola</option>
+          <option>Samsung</option>
+          <option>ASUS</option>
+          <option>Microsoft</option>
+        </select>
+
+
+
+      <br/>
+      <table id="table" border="1" cellspacing="0px">
+          <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Operating System</th>
+            <th>Remove</th>
+            </tr>
+        </thead>
+      </table>
+      <div class="Search"><input type="search" class="search" placeholder="Search"></div>
+      <script src="./script.js"></script>
 </body>
-</html>
+</html> 

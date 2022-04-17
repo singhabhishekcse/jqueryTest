@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /**
+ * Created by Jake on 1/16/2015.
+ */
+window.onload = function() {
+    //$("CollegeNameInput").style = 'background-color: red;';
+  }
+  //setup college list
+var collegeList = [{
+  value: 'Purdue University',
+  data: 'purdue'
+}, {
+  value: 'Cal Poly Slo',
+  data: 'calpolyslo'
+}, {
+  value: 'Sample College',
+  data: 'samplecollege'
+}, ]
+
+function submitCollegeNameForm(event) {
+  if (event.keyCode == 13 || event.which == 13) {
+    messageBox = getCollegeNameElement();
+    messageString = messageBox.value;
+    sessionStorage.setItem('uniName', messageString);
+    window.location.href = "classPage.html";
+  }
+
+}
+
+function getCollegeNameElement() {
+  var panel = document.getElementById("CollegeNameInput");
+  return panel;
+}
+
+
+
+
+//// setup autocomplete function pulling from currencies[] array
+$("#CollegeNameInput").autocomplete({
+  source: collegeList,
+  onSelect: function(suggestion) {
+    //var thehtml = '<strong>Currency Name:</strong> ' + suggestion.value + ' <br> <strong>Symbol:</strong> ' + suggestion.data;
+    //$('#outputcontent').html(thehtml);
+    alert('you selected ' + suggestion.value + ' which has data' + suggestion.data);
+  }
+});
+</script>
+</body>
+</html>
